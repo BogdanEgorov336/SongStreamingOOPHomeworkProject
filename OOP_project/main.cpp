@@ -10,7 +10,11 @@ int main() {
 	song1.lengthInMin = 3.38;
 	song1.totalPlays = 1'592'483'296;
 
-	cout << song1.ToString() << endl;
+	cout << "Before:\n" << song1.ToString() << endl;
+
+	song1.ChangeValues();
+
+	cout << "After:\n" << song1.ToString() << endl;
 
 	system("pause");
 	return 0;

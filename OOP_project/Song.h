@@ -21,4 +21,13 @@ public:
 			+ "\nLength of the song: " + to_string(lengthInMin) + " min"
 			+ "\nTotal plays: " + to_string(totalPlays) + "\n";
 	}
+
+	void ChangeValues() {
+
+		songName = "song2";
+		groupName = "Unknown";
+		albumFromName = "Unknown";
+		lengthInMin = 2.23;
+		totalPlays = 1'948;
+	}
 };
