@@ -1,33 +1,34 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include "main.h"
 
 class Song {
 
-public:
+private:
 
 	string songName;
-	string groupName;
+	string bandName;
 	string albumFromName;
 	double lengthInMin;
 	unsigned long long totalPlays;
 
+public:
 
-	string ToString() {
+	string ToString();
 
-		return "Song name: " + songName
-			+ "\nGroup Name: " + groupName
-			+ "\nAlbum-from name: " + albumFromName
-			+ "\nLength of the song: " + to_string(lengthInMin) + " min"
-			+ "\nTotal plays: " + to_string(totalPlays) + "\n";
-	}
+	Song();
+	Song(string songName);
+	Song(string songName, double lengthInMin);
+	Song(string songName, double lengthInMin, unsigned long long totalPlays);
+	Song(string songName, string bandName, string albumFromName,
+		double lengthInMin, unsigned long long totalPlays);
+	~Song();
 
-	void ChangeValues() {
 
-		songName = "song2";
-		groupName = "Unknown";
-		albumFromName = "Unknown";
-		lengthInMin = 2.23;
-		totalPlays = 1'948;
-	}
+	//void ChangeValues() {
+
+	//	songName = "song2";
+	//	bandName = "Unknown";
+	//	albumFromName = "Unknown";
+	//	lengthInMin = 2.23;
+	//	totalPlays = 1'948;
+	//}
 };
