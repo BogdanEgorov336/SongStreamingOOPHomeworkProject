@@ -2,33 +2,23 @@
 
 class Song {
 
-private:
+public:
 
-	string songName;
+	string name;
 	string bandName;
-	string albumFromName;
+	string albumName;
 	double lengthInMin;
 	unsigned long long totalPlays;
 
-public:
+	Song();
+	Song(string name);
+	Song(string name, double lengthInMin);
+	Song(string name, double lengthInMin, unsigned long long totalPlays);
+	Song(string name, string bandName, string albumName,
+		double lengthInMin, unsigned long long totalPlays);
+	Song(const Song& song);
+	~Song();
 
 	string ToString();
 
-	Song();
-	Song(string songName);
-	Song(string songName, double lengthInMin);
-	Song(string songName, double lengthInMin, unsigned long long totalPlays);
-	Song(string songName, string bandName, string albumFromName,
-		double lengthInMin, unsigned long long totalPlays);
-	~Song();
-
-
-	//void ChangeValues() {
-
-	//	songName = "song2";
-	//	bandName = "Unknown";
-	//	albumFromName = "Unknown";
-	//	lengthInMin = 2.23;
-	//	totalPlays = 1'948;
-	//}
 };

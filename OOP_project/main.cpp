@@ -1,10 +1,14 @@
+#pragma once
 #include "Song.h"
+#include "Initializer.h"
 
 int main() {
 
-	Song song1 {};
+	Song song;
 
-	cout << song1.ToString() << endl;
+	init(song);
+
+	cout << song.ToString() << endl;
 
 	system("pause");
 	return 0;

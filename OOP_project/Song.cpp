@@ -1,58 +1,61 @@
 #include "Song.h"
 
-Song::Song() {
+Song::Song() : Song("No name", "Unknown", "Unknown", 0.0, 0) {
 
-	songName = "No name";
+	//name = "No name";
+	//bandName = "Unknown";
+	//albumName = "Unknown";
+	//lengthInMin = 0.0;
+	//totalPlays = 0;
+}
+
+Song::Song(string name) : Song(name, "Unknown", "Unknown", 0.0, 0) {
+
+	//this->name = name;
+	//bandName = "Unknown";
+	//albumName = "Unknown";
+	//lengthInMin = 0.0;
+	//totalPlays = 0;
+}
+
+Song::Song(string name, double lengthInMin) {
+
+	this->name = name;
 	bandName = "Unknown";
-	albumFromName = "Unknown";
-	lengthInMin = 0.0;
+	albumName = "Unknown";
+	this->lengthInMin = lengthInMin;
 	totalPlays = 0;
 }
 
-Song::Song(string name) {
+Song::Song(string name, double lengthInMin, unsigned long long totalPlays) {
 
-	songName = name;
+	this->name = name;
 	bandName = "Unknown";
-	albumFromName = "Unknown";
-	lengthInMin = 0.0;
-	totalPlays = 0;
+	albumName = "Unknown";
+	this->lengthInMin = lengthInMin;
+	this->totalPlays = totalPlays;
 }
 
-Song::Song(string name, double length) {
+Song::Song(string name, string bandName, string albumName,
+	double lengthInMin, unsigned long long totalPlays) {
 
-	songName = name;
-	bandName = "Unknown";
-	albumFromName = "Unknown";
-	lengthInMin = length;
-	totalPlays = 0;
+	this->name = name;
+	this->bandName = bandName;
+	this->albumName = albumName;
+	this->lengthInMin = lengthInMin;
+	this->totalPlays = totalPlays;
 }
 
-Song::Song(string name, double length, unsigned long long plays) {
-
-	songName = name;
-	bandName = "Unknown";
-	albumFromName = "Unknown";
-	lengthInMin = length;
-	totalPlays = plays;
-}
-
-Song::Song(string name, string band, string album,
-	double length, unsigned long long plays) {
-
-	songName = name;
-	bandName = band;
-	albumFromName = album;
-	lengthInMin = length;
-	totalPlays = plays;
-}
+Song::Song(const Song& song)
+	: Song(name, bandName, albumName, lengthInMin, totalPlays) {};
 
 Song::~Song() {}
 
 string Song::ToString() {
 
-	return "Song name: " + songName
+	return "Song name: " + name
 		+ "\nGroup Name: " + bandName
-		+ "\nAlbum-from name: " + albumFromName
+		+ "\nAlbum-from name: " + albumName
 		+ "\nLength of the song: " + to_string(lengthInMin) + " min"
 		+ "\nTotal plays: " + to_string(totalPlays) + "\n";
 }

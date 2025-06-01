@@ -128,10 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Initializer.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Song.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Initializer.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Song.h" />
   </ItemGroup>
